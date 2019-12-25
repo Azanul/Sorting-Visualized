@@ -5,7 +5,6 @@ tk, canvas=create_canvas(SIZE)
 def sort():
 	for i in range(1, SIZE):
 		for j in range(i-1, -1, -1):
-			print(blocks[i].h," > ",blocks[j].h)
 			if blocks[i].h > blocks[j].h:
 				break
 			swap(tk, canvas, blocks, i, j)

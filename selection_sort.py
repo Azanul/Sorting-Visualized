@@ -9,7 +9,7 @@ def sort():
 			if blocks[min].h > blocks[j].h:
 				min=j
 		swap(tk, canvas, blocks, i, min)
-		time.sleep(0.1)	
+		time.sleep(0.05)	
 blocks=[]
 generate(canvas, blocks, SIZE)
 btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
