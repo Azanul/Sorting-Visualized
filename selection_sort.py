@@ -2,6 +2,8 @@ from OFA import *
 
 SIZE=140
 tk, canvas=create_canvas(SIZE)
+tk.title("Selection Sort")
+
 def sort():
 	for i in range(0, SIZE):
 		min=i

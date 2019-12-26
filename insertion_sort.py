@@ -2,6 +2,7 @@ from OFA import *
 
 SIZE=140
 tk, canvas=create_canvas(SIZE)
+tk.title("Insertion Sort")
 def sort():
 	for i in range(1, SIZE):
 		for j in range(i-1, -1, -1):
