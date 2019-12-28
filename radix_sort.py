@@ -6,31 +6,32 @@ tk.title("Radix Sort")
 
 def countingSort(arr, exp1): 
 	n = len(arr) 
-	output = 0 
-	count = 0 
-  
+	output = [0]*(n) 
+	count = [0]*(10)
+
 	for i in range(0, n): 
-		index = (arr[i]/exp1) 
-		count[index%10] += 1
-  
+		index = int(arr[i].h/exp1) 
+		print(index)
+		count[(index)%10] += 1
+	print(count)
 	for i in range(1,10): 
         	count[i] += count[i-1] 
-
+	print(count)
 	i = n-1
 	while i>=0: 
-		index = (arr[i]/exp1) 
+		index = int(arr[i].h/exp1) 
 		output[ count[ (index)%10 ] - 1] = arr[i] 
 		count[ (index)%10 ] -= 1
 		i -= 1
 
 	i = 0
 	for i in range(0,len(arr)): 
-		arr[i] = output[i] 
+		insert(tk, canvas, arr, i, output[i]) 
   
-def radixSort(): 
-	max1 = max(blocks, key=operator.attrgetter('h'))
+def sort(): 
+	max1 = max(blocks, key=lambda block: block.h)
 	exp = 1
-	while max1/exp > 0: 
+	while max1.h//exp > 0: 
 		countingSort(blocks, exp) 
 		exp *= 10
 
