@@ -1,15 +1,12 @@
 from OFA import *
 
-SIZE=140
-tk, canvas=create_canvas(SIZE)
-tk.title("Quick Sort")
-def sort(list, low, high):
+def sort(tk, canvas, list, high, low=0):
 	if low < high: 
-		pi = partition(list, low, high) 
-		sort(list, low, pi-1) 
-		sort(list, pi+1, high)
+		pi = partition(tk, canvas, list, low, high) 
+		sort(tk, canvas, list, pi-1, low) 
+		sort(tk, canvas, list, high, pi+1)
 
-def partition(list, low, high): 
+def partition(tk, canvas, list, low, high): 
 	i = low-1 
 	pivot = list[high].h
 
@@ -21,10 +18,14 @@ def partition(list, low, high):
 	swap(tk, canvas, list, i+1, high)
 	return (i+1)
 
-blocks=[]
-generate(canvas, blocks, SIZE)
-btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
-btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort(blocks, 0, SIZE-1))
-btn1.pack(side='left')
-btn2.pack(side='left')
-tk.mainloop()
+if __name__ == "__main__":
+	SIZE=140
+	tk, canvas=create_canvas(SIZE)
+	tk.title("Quick Sort")
+	blocks=[]
+	generate(canvas, blocks, SIZE)
+	btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
+	btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort(tk, canvas, blocks, SIZE))
+	btn1.pack(side='left')
+	btn2.pack(side='left')
+	tk.mainloop()

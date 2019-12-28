@@ -1,16 +1,13 @@
 from OFA import *
 
-SIZE=140
-tk, canvas=create_canvas(SIZE)
-tk.title("Merge Sort")
-def sort(list):
+def sort(tk, canvas, list):
 	LS = len(list)
 	if LS>1 :
 		mid = LS//2
 		l, r = list[:mid], list[mid:]
 
-		sort(r)
-		sort(l)
+		sort(tk, canvas, r)
+		sort(tk, canvas, l)
 		for i in range(LS):
 			canvas.delete(list[i].img)
 		i=j=k=0
@@ -34,10 +31,14 @@ def sort(list):
 			j+=1
 			k+=1
 
-blocks=[]
-generate(canvas, blocks, SIZE)
-btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
-btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort(blocks))
-btn1.pack(side='left')
-btn2.pack(side='left')
-tk.mainloop()
+if __name__ == "__main__":
+	SIZE=140
+	tk, canvas=create_canvas(SIZE)
+	tk.title("Merge Sort")
+	blocks=[]
+	generate(canvas, blocks, SIZE)
+	btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
+	btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort(tk, canvas, blocks))
+	btn1.pack(side='left')
+	btn2.pack(side='left')
+	tk.mainloop()
