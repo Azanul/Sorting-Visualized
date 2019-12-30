@@ -1,44 +1,78 @@
 from OFA import *
 
-def sort(tk, canvas, list):
+
+def sort(list=blocks):
+
 	LS = len(list)
+
 	if LS>1 :
+
 		mid = LS//2
+
 		l, r = list[:mid], list[mid:]
 
-		sort(tk, canvas, r)
-		sort(tk, canvas, l)
+
+		sort(r)
+
+		sort(l)
+
 		for i in range(LS):
+
 			canvas.delete(list[i].img)
+
 		i=j=k=0
+
 		while i<mid and j<len(r):
+
 			if l[i].h < r[j].h:
-				insert(tk, canvas, list, k, l[i])
+
+				insert(k, l[i], list)
+
 				i+=1
+
 			else:
-				insert(tk, canvas, list, k, r[j])
+
+				insert(k, r[j], list)
+
 				j+=1
-			k+=1
-			time.sleep(0.05)
-		while i<mid:
-			insert(tk, canvas, list, k, l[i])
-			time.sleep(0.05)
-			i+=1
-			k+=1
-		while j<len(r):
-			insert(tk, canvas, list, k, r[j])
-			time.sleep(0.05)		
-			j+=1
+
 			k+=1
 
+			time.sleep(0.05)
+
+		while i<mid:
+
+			insert(k, l[i], list)
+
+			time.sleep(0.05)
+
+			i+=1
+
+			k+=1
+
+		while j<len(r):
+
+			insert(k, r[j], list)
+
+			time.sleep(0.05)
+			j+=1
+
+			k+=1
+
+
 if __name__ == "__main__":
-	SIZE=140
-	tk, canvas=create_canvas(SIZE)
+
 	tk.title("Merge Sort")
-	blocks=[]
-	generate(canvas, blocks, SIZE)
-	btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle(tk, canvas, blocks, SIZE))
-	btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort(tk, canvas, blocks))
+
+
+	generate()
+
+	btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle())
+
+	btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort())
+
 	btn1.pack(side='left')
+
 	btn2.pack(side='left')
+
 	tk.mainloop()
