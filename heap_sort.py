@@ -55,11 +55,12 @@ if __name__ == "__main__":
 
 	blocks=[]
 
-	generate(canvas, blocks, SIZE)
+	generate()
 
 	btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle())
 
-	btn2 = Button(tk, text = 'Sort', bd = '5', command = sort())
+	btn2 = Button(tk, text = 'Sort', bd = '5', command = lambda: sort())
+
 	btn1.pack(side='left')
 
 	btn2.pack(side='left')

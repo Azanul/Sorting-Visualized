@@ -7,7 +7,6 @@ def sort(list=blocks):
 			if list[i].h > list[j].h:
 				break
 			swap(i, j, list)
-			time.sleep(0.03)
 			i-=1
 
 if __name__ == "__main__":
