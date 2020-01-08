@@ -10,6 +10,8 @@ from radix_sort import sort as RS
 
 from selection_sort import sort as SS
 
+from bubble_sort import sort as BS
+
 from OFA import *
 
 
@@ -35,6 +37,8 @@ btn6 = Button(tk, text = 'Heap Sort', bd = '5', command = lambda: HS())
 
 btn7 = Button(tk, text = 'Radix Sort', bd = '5', command = lambda: RS())
 
+btn8 = Button(tk, text = 'Bubble Sort', bd = '5', command = lambda: BS())
+
 btn1.place(x = 710, y = 5)
 
 btn2.place(x = 710, y = 65)
@@ -49,5 +53,6 @@ btn6.place(x = 710, y = 185)
 
 btn7.place(x = 710, y = 215)
 
+btn8.place(x = 710, y = 245)
 
 tk.mainloop()
