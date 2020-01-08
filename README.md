@@ -9,3 +9,5 @@ Graphical representation of all the following sorting algorithms-
 |4. |   Quick       |            O(n^2)           |           Ω(n log(n))     |         θ(n log(n))       |
 |5. |   Merge       |            O(n log(n))      |           Ω(n log(n))     |         θ(n log(n))       |
 |6. |   Radix       |            O(nk)            |           Ω(nk)           |         θ(nk)             |
+|7. |   Bubble      |            O(n^2)           |           Ω(n)            |         θ(n^2)            |
+|8. |   Cocktail    |            O(n^2)           |           Ω(n)            |         θ(n^2)            |
