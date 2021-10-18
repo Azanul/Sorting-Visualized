@@ -14,6 +14,8 @@ from bubble_sort import sort as BS
 
 from cocktail_sort import sort as CS
 
+from shell_sort import sort as SS
+
 from OFA import *
 
 
@@ -43,6 +45,8 @@ btn8 = Button(tk, text = 'Bubble Sort', bd = '5', command = lambda: BS())
 
 btn9 = Button(tk, text = 'Cocktail Sort', bd = '5', command = lambda: CS())
 
+btn10 = Button(tk, text = 'Shell Sort', bd = '5', command = lambda: SS())
+
 btn1.place(x = 710, y = 5)
 
 btn2.place(x = 710, y = 65)
@@ -60,5 +64,7 @@ btn7.place(x = 710, y = 215)
 btn8.place(x = 710, y = 245)
 
 btn9.place(x = 710, y = 275)
+
+btn10.place(x = 710, y = 305)
 
 tk.mainloop()
