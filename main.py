@@ -14,6 +14,9 @@ from bubble_sort import sort as BS
 
 from cocktail_sort import sort as CS
 
+from cycle_sort import sort as CY
+
+
 from OFA import *
 
 
@@ -43,6 +46,8 @@ btn8 = Button(tk, text = 'Bubble Sort', bd = '5', command = lambda: BS())
 
 btn9 = Button(tk, text = 'Cocktail Sort', bd = '5', command = lambda: CS())
 
+btnnizam = Button(tk, text = 'Cycle Sort', bd = '5', command = lambda: CY())
+
 btn1.place(x = 710, y = 5)
 
 btn2.place(x = 710, y = 65)
@@ -60,5 +65,7 @@ btn7.place(x = 710, y = 215)
 btn8.place(x = 710, y = 245)
 
 btn9.place(x = 710, y = 275)
+
+btnnizam.place(x = 710, y = 305)
 
 tk.mainloop()
