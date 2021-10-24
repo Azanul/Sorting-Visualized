@@ -14,7 +14,7 @@ from bubble_sort import sort as BS
 
 from cocktail_sort import sort as CS
 
-from cycle_sort import sort as CY
+from cycle_sort import sort as CyS
 
 
 from OFA import *
