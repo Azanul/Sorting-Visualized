@@ -8,7 +8,7 @@ def sort(list = blocks):
     writes = 0
     LS = len(list)
 
-    for i in range(LS):
+    for i in range(LS-1):
         item = list[i]
         pos = i
         for j in range(i + 1, LS):
