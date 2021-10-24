@@ -46,7 +46,7 @@ btn8 = Button(tk, text = 'Bubble Sort', bd = '5', command = lambda: BS())
 
 btn9 = Button(tk, text = 'Cocktail Sort', bd = '5', command = lambda: CS())
 
-btnnizam = Button(tk, text = 'Cycle Sort', bd = '5', command = lambda: CY())
+btnnizam = Button(tk, text = 'Cycle Sort', bd = '5', command = lambda: CyS())
 
 btn1.place(x = 710, y = 5)
 
