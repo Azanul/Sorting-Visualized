@@ -13,9 +13,12 @@ def insertionSort(bucket):
 
 def sort(list=blocks):
     copy_list = list[:]
-    bucket_map = [0, 28, 56, 84, 112]
+    size = len(list) + 1
+    bucket_size = (size - 1) // 5
+    bucket_map = [i*bucket_size for i in range(5)]
+
     for j in copy_list:
-        index_bucket = (j.h - 5) // 141
+        index_bucket = (j.h - 5) // size
         insert(bucket_map[index_bucket], j, list)
         bucket_map[index_bucket] += 1
     for i in range(5):
