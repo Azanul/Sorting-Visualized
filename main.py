@@ -18,6 +18,8 @@ from bucket_sort import sort as BuS
 
 from shell_sort import sort as SS
 
+from tim_sort import sort as TiS
+
 from OFA import *
 
 tk.title("Sorting Visualized")
@@ -46,6 +48,8 @@ btn10 = Button(tk, text = 'Shell Sort', bd = '5', command = lambda: SS())
 
 btnAmbareen = Button(tk, text='Bucket Sort', bd='5', command=lambda: BuS())
 
+btnAman = Button(tk, text='Tim Sort', bd='5', command=lambda: TiS())
+
 btn1.place(x=710, y=5)
 
 btn2.place(x=710, y=65)
@@ -64,8 +68,10 @@ btn8.place(x=710, y=245)
 
 btn9.place(x=710, y=275)
 
-btn10.place(x = 710, y = 305)
+btn10.place(x = 710, y=305)
 
-btnAmbareen.place(x=710, y=305)
+btnAmbareen.place(x=710, y=335)
+
+btnAman.place(x=710, y=365)
 
 tk.mainloop()
