@@ -14,51 +14,52 @@ from bubble_sort import sort as BS
 
 from cocktail_sort import sort as CS
 
+from bucket_sort import sort as BuS
+
 from OFA import *
-
-
 
 tk.title("Sorting Visualized")
 
-
-
-
 generate()
 
-btn1 = Button(tk, text = 'Shuffle', bd = '5', command = lambda: shuffle())
+btn1 = Button(tk, text='Shuffle', bd='5', command=lambda: shuffle())
 
-btn2 = Button(tk, text = 'Insertion Sort', bd = '5', command = lambda: IS())
+btn2 = Button(tk, text='Insertion Sort', bd='5', command=lambda: IS())
 
-btn3 = Button(tk, text = 'Selection Sort', bd = '5', command = lambda: SS())
+btn3 = Button(tk, text='Selection Sort', bd='5', command=lambda: SS())
 
-btn4 = Button(tk, text = 'Merge Sort', bd = '5', command = lambda: MS())
+btn4 = Button(tk, text='Merge Sort', bd='5', command=lambda: MS())
 
-btn5 = Button(tk, text = 'Quick Sort', bd = '5', command = lambda: QS(140-1))
+btn5 = Button(tk, text='Quick Sort', bd='5', command=lambda: QS(140 - 1))
 
-btn6 = Button(tk, text = 'Heap Sort', bd = '5', command = lambda: HS())
+btn6 = Button(tk, text='Heap Sort', bd='5', command=lambda: HS())
 
-btn7 = Button(tk, text = 'Radix Sort', bd = '5', command = lambda: RS())
+btn7 = Button(tk, text='Radix Sort', bd='5', command=lambda: RS())
 
-btn8 = Button(tk, text = 'Bubble Sort', bd = '5', command = lambda: BS())
+btn8 = Button(tk, text='Bubble Sort', bd='5', command=lambda: BS())
 
-btn9 = Button(tk, text = 'Cocktail Sort', bd = '5', command = lambda: CS())
+btn9 = Button(tk, text='Cocktail Sort', bd='5', command=lambda: CS())
 
-btn1.place(x = 710, y = 5)
+btnAmbareen = Button(tk, text='Bucket Sort', bd='5', command=lambda: BuS())
 
-btn2.place(x = 710, y = 65)
+btn1.place(x=710, y=5)
 
-btn3.place(x = 710, y = 95)
+btn2.place(x=710, y=65)
 
-btn4.place(x = 710, y = 125)
+btn3.place(x=710, y=95)
 
-btn5.place(x = 710, y = 155)
+btn4.place(x=710, y=125)
 
-btn6.place(x = 710, y = 185)
+btn5.place(x=710, y=155)
 
-btn7.place(x = 710, y = 215)
+btn6.place(x=710, y=185)
 
-btn8.place(x = 710, y = 245)
+btn7.place(x=710, y=215)
 
-btn9.place(x = 710, y = 275)
+btn8.place(x=710, y=245)
+
+btn9.place(x=710, y=275)
+
+btnAmbareen.place(x=710, y=305)
 
 tk.mainloop()
