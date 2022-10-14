@@ -69,7 +69,7 @@ def insert(index, ele, list=blocks, tk=tk, canvas=canvas):
 	ele.color_chk()
 	list[index].color_chk()
 	tk.update()
-	time.sleep(0.03)	
+	time.sleep(0.03)
 	canvas.delete(list[index])
 	list[index] = Block(canvas, list[index].x1, ele.y1, list[index].x2, ele.h+ele.y1)
 	list[index].origin = ele.origin
@@ -79,3 +79,10 @@ def insert(index, ele, list=blocks, tk=tk, canvas=canvas):
 	del ele
 	tk.update()
 
+def reset(LS=140, list=blocks, canvas=canvas):
+	for block in list:
+		canvas.delete(block.img)
+		del block
+	tk.update()
+	list.clear()
+	generate(LS=LS, list=list, canvas=canvas)

@@ -26,7 +26,15 @@ tk.title("Sorting Visualized")
 
 generate()
 
-btn1 = Button(tk, text='Shuffle', bd='5', command=lambda: shuffle())
+net_blocks_var = Variable(tk, value= 140)
+
+net_blocks = lambda: int(net_blocks_var.get())
+
+inputBox = Entry(tk, textvariable= net_blocks_var)
+
+enter = Button(tk, text= 'Enter', bd= '5', command= lambda: reset(net_blocks()))
+
+btn1 = Button(tk, text='Shuffle', bd='5', command=lambda: shuffle(net_blocks()))
 
 btn2 = Button(tk, text='Insertion Sort', bd='5', command=lambda: IS())
 
@@ -34,7 +42,7 @@ btn3 = Button(tk, text='Selection Sort', bd='5', command=lambda: SS())
 
 btn4 = Button(tk, text='Merge Sort', bd='5', command=lambda: MS())
 
-btn5 = Button(tk, text='Quick Sort', bd='5', command=lambda: QS(140 - 1))
+btn5 = Button(tk, text='Quick Sort', bd='5', command=lambda: QS(net_blocks() - 1))
 
 btn6 = Button(tk, text='Heap Sort', bd='5', command=lambda: HS())
 
@@ -52,26 +60,30 @@ btnAman = Button(tk, text='Tim Sort', bd='5', command=lambda: TiS())
 
 btn1.place(x=710, y=5)
 
-btn2.place(x=710, y=65)
+inputBox.place(x=710, y=45)
 
-btn3.place(x=710, y=95)
+enter.place(x= 710, y= 70)
 
-btn4.place(x=710, y=125)
+btn2.place(x=710, y=115)
 
-btn5.place(x=710, y=155)
+btn3.place(x=710, y=145)
 
-btn6.place(x=710, y=185)
+btn4.place(x=710, y=175)
 
-btn7.place(x=710, y=215)
+btn5.place(x=710, y=205)
 
-btn8.place(x=710, y=245)
+btn6.place(x=710, y=235)
 
-btn9.place(x=710, y=275)
+btn7.place(x=710, y=265)
 
-btn10.place(x = 710, y=305)
+btn8.place(x=710, y=295)
 
-btnAmbareen.place(x=710, y=335)
+btn9.place(x=710, y=325)
 
-btnAman.place(x=710, y=365)
+btn10.place(x = 710, y=355)
+
+btnAmbareen.place(x=710, y=385)
+
+btnAman.place(x=710, y=415)
 
 tk.mainloop()
