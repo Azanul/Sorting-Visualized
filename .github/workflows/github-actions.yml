@@ -1,0 +1,22 @@
+name: Issue Assignment with Comment
+
+on: [issue_comment]
+
+jobs: 
+  create_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: action-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: ['#self-assign','#take']
+      - name: 'Auto-assign issue'
+      - uses: pozil/auto-assign-issue@v1
+        if: ${{ steps.regex-match.outputs.match != ''}}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowSelfAssign: true
+          assignees: ${{ github.event.issue.user.login }}
